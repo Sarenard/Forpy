@@ -9,5 +9,6 @@ if len(sys.argv) < 2:
     raise Exceptions.NoFileSpecified("Not enough arguments for the program, usage : main.py [file.forpy]")
 
 parser = Parser(sys.argv[1])
-interpreter = Interpreter(parser.generate_instructions())
+parser.generate_instructions()
+interpreter = Interpreter(parser.instructions)
 interpreter.run()
